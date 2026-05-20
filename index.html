@@ -53,7 +53,15 @@
             color: #888;
             font-size: 15px;
             font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
             margin-bottom: 40px;
+            text-align: justify;
         }
 
         .status {
@@ -109,10 +117,10 @@
             padding: 15px;
             background: white;
             border-radius: 6px;
-            text-align: left;
+            text-align: center;
         }
 
-        .contact-item strong {
+        .contact-label {
             color: #333;
             font-weight: 600;
             display: block;
@@ -171,6 +179,10 @@
             .info-section {
                 padding: 20px;
             }
+
+            .description {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -179,6 +191,11 @@
         <!-- Title -->
         <h1>Optitherm Solutions</h1>
         <p class="subtitle">Agente Oficial Ariston Group</p>
+
+        <!-- Description -->
+        <p class="description">
+            A Optitherm Solutions desenvolve e projeta soluções integradas de climatização, ventilação e produção de água quente sanitária (AQS). Como parceiro especializado e Agente Oficial da Ariston Group, atuamos na vanguarda da eficiência energética, garantindo o dimensionamento ideal, o suporte técnico qualificado e a máxima otimização de sistemas térmicos para o mercado residencial e industrial.
+        </p>
 
         <!-- Maintenance Status -->
         <div class="status">
@@ -195,13 +212,13 @@
             </div>
 
             <div class="contact-item">
-                <strong>☎️ Telefone:</strong>
+                <span class="contact-label">☎️ Telefone</span>
                 <span class="phone-number">+351 917 851 369</span>
                 <span class="small-text">(chamadas para rede móvel nacional)</span>
             </div>
 
             <div class="contact-item">
-                <strong>📧 Email:</strong>
+                <span class="contact-label">📧 Email</span>
                 <a href="mailto:joao.oliveira@optithermsolutions.pt" class="email-link">
                     joao.oliveira@optithermsolutions.pt
                 </a>

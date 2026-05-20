@@ -3,231 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optitherm Solutions | Em Manutenção</title>
+    <title>Optitherm Solutions | Engenharia e Consultoria Técnica</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: #121212; /* Fundo escuro como o cartão */
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 20px;
+            align-items: center;
+            min-height: 100vh;
         }
-
         .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
-            max-width: 700px;
-            padding: 50px 30px;
+            max-width: 650px;
+            width: 90%;
+            padding: 45px;
+            background: #1a1a1a; /* Caixa ligeiramente mais clara para dar contraste */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
-            animation: slideIn 0.6s ease-out;
+            position: relative;
+            overflow: hidden;
         }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* A barra de gradiente térmico do teu logo/cartão no topo da caixa */
+        .thermal-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #b33a1b, #d97d24, #629cb3, #43a3b3);
         }
-
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .header-logos img {
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
         h1 {
-            color: #333;
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: #888;
-            font-size: 15px;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        .description {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-
-        .status {
-            background: linear-gradient(135deg, #fff3cd 0%, #fffbea 100%);
-            border-left: 6px solid #ffc107;
-            padding: 30px;
-            margin-bottom: 40px;
-            border-radius: 8px;
-            color: #856404;
-        }
-
-        .status h2 {
             font-size: 22px;
-            margin-bottom: 12px;
-            color: #ff9800;
-            font-weight: 600;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
-
-        .status p {
+        .badge {
+            display: inline-block;
+            background-color: #2a2a2a;
+            color: #b0b0b0;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #3a3a3a;
+        }
+        .description-text {
             font-size: 15px;
             line-height: 1.7;
+            color: #cccccc;
+            margin-bottom: 35px;
+            text-align: justify;
         }
-
-        .info-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #f0f1f3 100%);
-            padding: 35px;
-            border-radius: 10px;
+        .regions {
+            font-size: 13px;
+            color: #a0a0a0;
+            font-weight: 500;
             margin-bottom: 30px;
-            text-align: center;
-            border: 1px solid #e9ecef;
+            border-top: 1px dashed #2a2a2a;
+            padding-top: 20px;
         }
-
-        .info-section h3 {
-            color: #667eea;
-            font-size: 18px;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .locations {
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 25px;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            font-size: 15px;
+        .contacts-box {
+            background: #222222;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
             line-height: 1.8;
         }
-
-        .contact-item {
-            margin-bottom: 18px;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            text-align: center;
+        .contacts-box strong {
+            color: #ffffff;
         }
-
-        .contact-label {
-            color: #333;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
-        .phone-number {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 16px;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .small-text {
-            color: #999;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        .email-link {
-            color: #667eea;
+        .contacts-box a {
+            color: #4da6ff; /* Azul mais claro para ter contraste no fundo escuro */
             text-decoration: none;
-            word-break: break-all;
             font-weight: 600;
-            font-size: 15px;
         }
-
-        .email-link:hover {
+        .contacts-box a:hover {
             text-decoration: underline;
-            color: #e74c3c;
         }
-
-        .footer-text {
-            color: #999;
-            font-size: 13px;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            .status {
-                padding: 20px;
-            }
-
-            .info-section {
-                padding: 20px;
-            }
-
-            .description {
-                text-align: left;
-            }
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #555555;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Title -->
-        <h1>Optitherm Solutions</h1>
-        <p class="subtitle">Agente Oficial Ariston Group</p>
 
-        <!-- Description -->
-        <p class="description">
-            A Optitherm Solutions desenvolve e projeta soluções integradas de climatização, ventilação e produção de água quente sanitária (AQS). Como parceiro especializado e Agente Oficial da Ariston Group, atuamos na vanguarda da eficiência energética, garantindo o dimensionamento ideal, o suporte técnico qualificado e a máxima otimização de sistemas térmicos para o mercado residencial e industrial.
-        </p>
-
-        <!-- Maintenance Status -->
-        <div class="status">
-            <h2>🔧 Em Manutenção</h2>
-            <p>O nosso site está temporariamente em manutenção. Voltaremos em breve com uma nova experiência!</p>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="info-section">
-            <h3>📍 Localizações & Contacto</h3>
-            
-            <div class="locations">
-                Aveiro • Coimbra • Guarda • Viseu • Castelo Branco
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">☎️ Telefone</span>
-                <span class="phone-number">+351 917 851 369</span>
-                <span class="small-text">(chamadas para rede móvel nacional)</span>
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-label">📧 Email</span>
-                <a href="mailto:joao.oliveira@optithermsolutions.pt" class="email-link">
-                    joao.oliveira@optithermsolutions.pt
-                </a>
-            </div>
-        </div>
-
-        <p class="footer-text">
-            Obrigado pela sua paciência. Em caso de urgência, contacte-nos pelos dados acima.
-        </p>
+<div class="container">
+    <div class="thermal-bar"></div>
+    
+    <div class="header-logos">
+        <img src="logo optithermsolutions.png" alt="Optitherm Solutions">
+        <img src="Ariston Logo.png" alt="Ariston Group">
     </div>
+
+    <div class="badge">A nossa página encontra-se em atualização</div>
+
+    <h1>Consultoria Técnica em AVAC</h1>
+    
+    <div class="description-text">
+        A <strong>Optitherm Solutions</strong> desenvolve e projeta soluções integradas de climatização, ventilação e produção de água quente sanitária (AQS). Como parceiro especializado e Agente Oficial do Ariston Group, atuamos na vanguarda da eficiência energética, garantindo o dimensionamento ideal, o suporte técnico qualificado e a máxima otimização de sistemas térmicos para o mercado residencial e industrial.
+    </div>
+
+    <div class="regions">
+        <strong>Área de Atuação:</strong> Aveiro | Coimbra | Guarda | Viseu | Castelo Branco
+    </div>
+    
+    <div class="contacts-box">
+        <strong>Contacto Geral:</strong> +351 917 851 369 <span style="color: #888888; font-size: 12px;">(chamada para a rede móvel nacional)</span><br>
+        <strong>E-mail:</strong> <a href="mailto:joao.oliveira@optithermsolutions.pt">joao.oliveira@optithermsolutions.pt</a>
+    </div>
+    
+    <div class="footer">
+        &copy; 2026 Optitherm Solutions. Todos os direitos reservados.
+    </div>
+</div>
+
 </body>
 </html>

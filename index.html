@@ -172,10 +172,11 @@ form.f button:disabled{opacity:.55; cursor:default}
 .news{border-top:4px solid transparent; border-image:var(--brand-grad) 1; background:var(--surface-2)}
 .news-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,4vw,52px); align-items:center}
 @media(max-width:900px){ .news-grid{grid-template-columns:1fr; gap:28px} }
-.embed{background:var(--surface); border:1px solid var(--rule); padding:16px 16px 14px}
-.embed iframe{width:100%; height:150px; border:0; display:block; background:var(--surface)}
-.embed .fb{margin:10px 0 0; padding-top:12px; border-top:1px solid var(--rule-soft); font-family:var(--mono); font-size:10.5px; color:var(--ink-3); line-height:1.6}
-.embed .fb a{color:var(--cool)}
+.sub{background:var(--surface); border:1px solid var(--rule); padding:30px 28px 32px; display:flex; flex-direction:column; gap:14px; align-items:flex-start}
+.sub .pub{font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.sub h4{font-family:var(--display); font-weight:700; font-size:clamp(19px,2.3vw,23px); letter-spacing:-.02em; margin:0; line-height:1.2}
+.sub .d{margin:0; color:var(--ink-2); font-size:15px; line-height:1.6}
+.sub .m{font-family:var(--mono); font-size:10.5px; color:var(--ink-3); margin:2px 0 0}
 
 /* contacto */
 .cgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
@@ -343,9 +344,13 @@ footer{background:#000; color:#8d989b; padding:34px 0 42px}
           <h3>Receba as notas técnicas por email.</h3>
           <p style="color:var(--ink-2); margin:0; font-size:17px; max-width:46ch">Sem periodicidade forçada: sai quando há alguma coisa que valha a pena contar — um lançamento de gama, uma nota de dimensionamento, uma leitura do setor. Cancela quando quiser, num clique.</p>
         </div>
-        <div class="embed">
-          <iframe src="https://SUBSTACK.substack.com/embed" title="Subscrever a newsletter" scrolling="no" loading="lazy"></iframe>
-          <p class="fb">Se a caixa acima não abrir, subscreva em <a href="https://SUBSTACK.substack.com/subscribe" target="_blank" rel="noopener">notas.optithermsolutions.pt</a></p>
+        <!-- Para mudar o endereco da newsletter, substitua os dois enderecos abaixo. -->
+        <div class="sub">
+          <span class="pub">Notas Optitherm Solutions</span>
+          <h4>Artigos técnicos de AVAC, na sua caixa de correio.</h4>
+          <p class="d">Subscrição gratuita. Cada nova publicação chega-lhe por email, sem passar por algoritmo nenhum.</p>
+          <a class="btn btn-primary" href="https://substack.com/@notasoptithermsolutions" target="_blank" rel="noopener">Subscrever gratuitamente</a>
+          <p class="m">Alojado no Substack · cancela quando quiser, num clique</p>
         </div>
       </div>
     </div>

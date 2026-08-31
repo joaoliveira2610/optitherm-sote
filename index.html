@@ -134,6 +134,39 @@ h3{font-family:var(--display); font-weight:700; font-size:clamp(23px,3vw,34px); 
 .post h4{font-family:var(--display); font-weight:700; font-size:clamp(18px,2.1vw,22px); letter-spacing:-.018em; margin:0 0 8px; line-height:1.24; text-wrap:balance}
 .post p{margin:0; color:var(--ink-2); font-size:15px; max-width:66ch}
 
+
+/* formulário + newsletter */
+.contact-2{display:grid; grid-template-columns:0.85fr 1.15fr; gap:26px; align-items:start}
+@media(max-width:900px){ .contact-2{grid-template-columns:1fr} }
+.cstack{display:flex; flex-direction:column; gap:16px}
+form.f{background:var(--surface); border:1px solid var(--rule); padding:26px 24px 28px; display:flex; flex-direction:column; gap:14px}
+.frow{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media(max-width:560px){ .frow{grid-template-columns:1fr} }
+.fld{display:flex; flex-direction:column; gap:6px}
+.fld label{font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.fld input,.fld textarea{
+  font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--ground);
+  border:1px solid var(--rule); padding:11px 12px; border-radius:0; width:100%;
+}
+.fld textarea{min-height:104px; resize:vertical; line-height:1.55}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--focus); outline-offset:1px; border-color:transparent}
+form.f button{font-family:var(--sans); font-size:14.5px; font-weight:600; color:#fff; background:var(--hot); border:0; padding:13px 22px; cursor:pointer; align-self:flex-start; transition:background .15s}
+form.f button:hover{background:var(--ink)}
+form.f button:disabled{opacity:.55; cursor:default}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.fmsg{font-size:14.5px; margin:0; display:none}
+.fmsg.ok{display:block; color:var(--cool)}
+.fmsg.err{display:block; color:#b3261e}
+.fnote{font-family:var(--mono); font-size:10.5px; color:var(--ink-3); margin:0; line-height:1.55}
+
+.news{border-top:4px solid transparent; border-image:var(--brand-grad) 1; background:var(--surface-2)}
+.news-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,4vw,52px); align-items:center}
+@media(max-width:900px){ .news-grid{grid-template-columns:1fr; gap:28px} }
+.embed{background:var(--surface); border:1px solid var(--rule); padding:16px 16px 14px}
+.embed iframe{width:100%; height:150px; border:0; display:block; background:var(--surface)}
+.embed .fb{margin:10px 0 0; padding-top:12px; border-top:1px solid var(--rule-soft); font-family:var(--mono); font-size:10.5px; color:var(--ink-3); line-height:1.6}
+.embed .fb a{color:var(--cool)}
+
 /* contacto */
 .cgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
 @media(max-width:800px){ .cgrid{grid-template-columns:1fr} }
@@ -293,6 +326,23 @@ footer{background:#000; color:#8d989b; padding:34px 0 42px}
     </div>
   </section>
 
+
+  <section class="news">
+    <div class="wrap">
+      <div class="news-grid">
+        <div>
+          <p class="eyebrow">Newsletter</p>
+          <h3>Receba as notas técnicas por email.</h3>
+          <p style="color:var(--ink-2); margin:0; font-size:17px; max-width:46ch">Sem periodicidade forçada: sai quando há alguma coisa que valha a pena contar — um lançamento de gama, uma nota de dimensionamento, uma leitura do setor. Cancela quando quiser, num clique.</p>
+        </div>
+        <div class="embed">
+          <iframe src="https://SUBSTACK.substack.com/embed" title="Subscrever a newsletter" scrolling="no" loading="lazy"></iframe>
+          <p class="fb">Se a caixa acima não abrir, subscreva em <a href="https://SUBSTACK.substack.com/subscribe" target="_blank" rel="noopener">notas.optithermsolutions.pt</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto">
     <div class="wrap">
       <div class="sec-head">
@@ -300,9 +350,53 @@ footer{background:#000; color:#8d989b; padding:34px 0 42px}
         <h3>Tem uma obra para dimensionar?</h3>
         <p>Diga-nos o que está em causa — tipologia, consumo previsto, constrangimentos de espaço — e respondemos com uma opinião técnica antes de falarmos de equipamento.</p>
       </div>
-      <div class="cgrid">
-        <a href="tel:+351917851369"><span class="k">Telefone</span><span class="v">+351 917 851 369</span></a>
-        <a href="mailto:joao.oliveira@optithermsolutions.pt"><span class="k">Email</span><span class="v">joao.oliveira@<wbr>optithermsolutions.pt</span></a>
+      <div class="contact-2">
+        <div class="cstack">
+          <a class="doc" href="tel:+351917851369" style="display:flex">
+            <span class="ft">TEL</span>
+            <span><h4>+351 917 851 369</h4><p>Dias úteis, 9h–19h.</p></span>
+          </a>
+          <a class="doc" href="mailto:joao.oliveira@optithermsolutions.pt" style="display:flex">
+            <span class="ft">MAIL</span>
+            <span><h4>joao.oliveira@<wbr>optithermsolutions.pt</h4><p>Resposta habitual em 24 horas úteis.</p></span>
+          </a>
+        </div>
+
+        <form class="f" id="cform" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="COLE-AQUI-A-SUA-ACCESS-KEY">
+          <input type="hidden" name="subject" value="Novo contacto pelo site Optitherm">
+          <input type="hidden" name="from_name" value="Site Optitherm Solutions">
+          <div class="hp"><label>Não preencher<input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="frow">
+            <div class="fld">
+              <label for="n">Nome</label>
+              <input id="n" name="nome" type="text" required autocomplete="name">
+            </div>
+            <div class="fld">
+              <label for="e">Email</label>
+              <input id="e" name="email" type="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fld">
+              <label for="t">Telefone <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+              <input id="t" name="telefone" type="tel" autocomplete="tel">
+            </div>
+            <div class="fld">
+              <label for="emp">Empresa <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+              <input id="emp" name="empresa" type="text" autocomplete="organization">
+            </div>
+          </div>
+          <div class="fld">
+            <label for="m">O que precisa</label>
+            <textarea id="m" name="mensagem" required placeholder="Tipologia da obra, consumo previsto, constrangimentos de espaço, prazo…"></textarea>
+          </div>
+          <button type="submit">Enviar pedido</button>
+          <p class="fmsg" id="fmsg"></p>
+          <p class="fnote">Os dados enviados servem apenas para lhe responder. Não são partilhados com terceiros nem usados para envio de comunicações comerciais.</p>
+        </form>
+      </div>
       </div>
     </div>
   </section>
@@ -316,6 +410,29 @@ footer{background:#000; color:#8d989b; padding:34px 0 42px}
     <span style="margin-left:auto">© 2026 Optitherm Solutions</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var f=document.getElementById("cform"), msg=document.getElementById("fmsg");
+  if(!f) return;
+  f.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var btn=f.querySelector("button"); btn.disabled=true; btn.textContent="A enviar…";
+    msg.className="fmsg";
+    fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.success){ f.reset(); msg.className="fmsg ok"; msg.textContent="Pedido enviado. Respondo em 24 horas úteis."; btn.textContent="Enviado"; }
+        else { throw new Error(d.message||"erro"); }
+      })
+      .catch(function(){
+        msg.className="fmsg err";
+        msg.textContent="Não foi possível enviar. Ligue 917 851 369 ou escreva para joao.oliveira@optithermsolutions.pt.";
+        btn.disabled=false; btn.textContent="Enviar pedido";
+      });
+  });
+})();
+</script>
 
 </body>
 </html>
